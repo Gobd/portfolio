@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="/css/css.min.css">
+    <script src="/js/js.min.js" charset="utf-8"></script>
+</head>
+<body ng-app="app" ng-controller="mainCtrl" class="ng-cloak">
+
+<nav id="navigation" ng-class="pxScr < 100 ? 'navCl' : 'navBl'">
+    <div id="innerNav">
+        <a id="navName" ng-style="{'color' : pxScr < 100 ? '#ebeaea' : '#131829'}" href="#" ng-click="scrollTo('about')">BRIAN KEMPER</a>
+        <a ng-style="{'color' : pxScr < 100 ? '#ebeaea' : '#131829'}" href="#" ng-click="scrollTo('about')">About</a>
+        <a ng-style="{'color' : pxScr < 100 ? '#ebeaea' : '#131829'}" href="#" ng-click="scrollTo('skills')">Skills</a>
+        <a ng-style="{'color' : pxScr < 100 ? '#ebeaea' : '#131829'}" href="#" ng-click="scrollTo('contact')">Contact</a>
+    </div>
+</nav>
+<section id="about">
+    <p id="aboutName">
+        BRIAN KEMPER
+    </p>
+    <p id="nameBorder">
+
+    </p>
+    <p>
+        Full Stack Web Developer | UI/UX | JavaScript
+    </p>
+    <div id="downArrow">
+        <a href="" ng-click="scrollTo('skills')"><img src="down.svg"></a>
+    </div>
+</section>
+<section id="skills">
+    <p>
+        skills
+    </p>
+</section>
+<section id="portfolio">
+    <p>
+        portfolio
+    </p>
+</section>
+<section id="contact">
+    <p>
+        contact
+    </p>
+</section>
+
+</body>
+</html>
