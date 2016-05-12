@@ -1,0 +1,124 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
+@font-face {
+    font-family: system;
+    font-style: normal;
+    font-weight: 300;
+    src: local(".SFNSText-Regular"), local(".HelveticaNeueDeskInterface-Regular"), local(".LucidaGrandeUI"), local("Ubuntu"), local("Segoe UI"), local("Roboto-Regular"), local("DroidSans"), local("Tahoma");
+}
+
+@font-face {
+    font-family: system;
+    font-style: normal;
+    font-weight: 400;
+    src: local(".SFNSText-Regular"), local(".HelveticaNeueDeskInterface-Regular"), local(".LucidaGrandeUI"), local("Ubuntu"), local("Segoe UI"), local("Roboto-Regular"), local("DroidSans"), local("Tahoma");
+}
+
+@font-face {
+    font-family: system;
+    font-style: normal;
+    font-weight: 700;
+    src: local(".SFNSText-Bold"), local(".HelveticaNeueDeskInterface-Bold"), local(".LucidaGrandeUI"), local("Ubuntu Bold"), local("Roboto-Bold"), local("DroidSans-Bold"), local("Segoe UI Bold"), local("Tahoma Bold");
+}
+
+@keyframes flickerAnimation {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: .25;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+body {
+    font-family: system, "Segoe UI", Tahoma;
+}
+
+#navigation {
+    position: fixed;
+    top: 0;
+    height: 65px;
+    width: 100%;
+    transition: background-color .3s;
+    border-bottom: 1px solid #51565D;
+}
+
+#navigation a {
+    color: #0d101c;
+    text-decoration: none;
+    transition: all .3s;
+}
+
+#navigation a:hover {
+    font-size: 1.1em;
+}
+
+.navCl {
+    background-color: transparent;
+}
+
+.navBl {
+    background-color: white;
+}
+
+#innerNav {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.45em;
+    margin-top: 20px;
+}
+
+#navName {
+    font-weight: 700;
+}
+
+#about {
+    height: 100vh;
+    background: url("../bg.png");
+    background-position: bottom left;
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+}
+
+#aboutName {
+    font-weight: 700;
+}
+
+#nameBorder {
+    margin: 0;
+    width: 10%;
+    border-bottom: 4px solid white;
+}
+
+#downArrow img {
+    margin-bottom: -250px;
+    height: 75px;
+    filter: invert(100%);
+    opacity:1;
+    animation: flickerAnimation 1.5s infinite;
+}
+
+#skills {
+    height: 500px;
+    border: 5px solid black;
+}
+
+#portfolio {
+    height: 500px;
+    border: 5px solid black;
+}
+
+#contact {
+    height: 500px;
+    border: 5px solid black;
+}
