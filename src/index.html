@@ -8,16 +8,16 @@
 </head>
 <body ng-app="app" ng-controller="mainCtrl" class="ng-cloak">
 
-<nav id="navigation" ng-class="pxScr < 100 ? 'navCl' : 'navBl'">
+<nav id="navigation" ng-class="pxScr < 75 ? 'navCl' : 'navBl'">
     <div id="innerNav">
-        <a id="navName" ng-style="{'color' : pxScr < 100 ? '#ebeaea' : '#131829'}" href="#" ng-click="scrollTo('about')">BRIAN KEMPER</a>
-        <a ng-style="{'color' : pxScr < 100 ? '#ebeaea' : '#131829'}" href="#" ng-click="scrollTo('about')">About</a>
-        <a ng-style="{'color' : pxScr < 100 ? '#ebeaea' : '#131829'}" href="#" ng-click="scrollTo('skills')">Skills</a>
-        <a ng-style="{'color' : pxScr < 100 ? '#ebeaea' : '#131829'}" href="#" ng-click="scrollTo('contact')">Contact</a>
+        <a id="navName" ng-style="navStyle" href="#" ng-click="scrollTo('top')">BRIAN KEMPER</a>
+        <a id="navAbout" ng-style="navStyle" href="#" ng-click="scrollTo('about')">About</a>
+        <a id="navSkills" ng-style="navStyle" href="#" ng-click="scrollTo('skills')">Skills</a>
+        <a id="navContact" ng-style="navStyle" href="#" ng-click="scrollTo('contact')">Contact</a>
     </div>
 </nav>
-<section id="about">
-    <p id="aboutName">
+<section id="top">
+    <p id="topName">
         BRIAN KEMPER
     </p>
     <p id="nameBorder">
@@ -27,8 +27,13 @@
         Full Stack Web Developer | UI/UX | JavaScript
     </p>
     <div id="downArrow">
-        <a href="" ng-click="scrollTo('skills')"><img src="down.svg"></a>
+        <a href="" ng-click="scrollTo('about')"><img src="down.svg"></a>
     </div>
+</section>
+<section id="about">
+    <p>
+        about
+    </p>
 </section>
 <section id="skills">
     <p>

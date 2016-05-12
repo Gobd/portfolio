@@ -58,6 +58,11 @@ body {
     font-size: 1.1em;
 }
 
+.active {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
 .navCl {
     background-color: transparent;
 }
@@ -77,7 +82,7 @@ body {
     font-weight: 700;
 }
 
-#about {
+#top {
     height: 100vh;
     background: url("../bg.png");
     background-position: bottom left;
@@ -90,7 +95,7 @@ body {
     font-size: 2.5em;
 }
 
-#aboutName {
+#topName {
     font-weight: 700;
 }
 
@@ -106,6 +111,11 @@ body {
     filter: invert(100%);
     opacity:1;
     animation: flickerAnimation 1.5s infinite;
+}
+
+#about {
+    height: 500px;
+    border: 5px solid black;
 }
 
 #skills {
