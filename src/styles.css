@@ -58,11 +58,6 @@ body {
     font-size: 1.1em;
 }
 
-.active {
-    font-weight: 700;
-    text-decoration: underline;
-}
-
 .navCl {
     background-color: transparent;
 }
@@ -99,15 +94,19 @@ body {
     font-weight: 700;
 }
 
+#devInfo {
+    font-size: 4vw;
+}
+
 .borderW {
     margin: 0;
-    width: 10%;
+    min-width: 100px;
     border-bottom: 4px solid white;
 }
 
 .borderB {
     margin: -20px 0 0 0;
-    width: 3%;
+    min-width: 50px;
     border-bottom: 4px solid black;
 }
 
@@ -135,8 +134,19 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 500px;
-    border: 5px solid black;
+}
+
+#skillsIcons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#skillsIcons svg {
+    height: 100px;
+    width: 100px;
+    margin: 35px 20px;
 }
 
 #portfolio {
