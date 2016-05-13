@@ -15,12 +15,31 @@ angular.module('app').controller('mainCtrl', function ($scope, $document, $windo
             count++;
         };
         var delayRand = function () {
-            return Math.random() * (125 - 75) + 75;
+            return Math.random() * (120 - 70) + 70;
         };
         $interval(print, delayRand(), text.length)
     }
+
     printer(tagText);
 
+    SVGElement.prototype.hasClass = function (className) {
+        return new RegExp('(\\s|^)' + className + '(\\s|$)').test(this.getAttribute('class'));
+    };
+
+    SVGElement.prototype.addClass = function (className) {
+        if (!this.hasClass(className)) {
+            this.setAttribute('class', this.getAttribute('class') + ' ' + className);
+        }
+    };
+
+    SVGElement.prototype.removeClass = function (className) {
+        var removedClass = this.getAttribute('class').replace(new RegExp('(\\s|^)' + className + '(\\s|$)', 'g'), '$2');
+        if (this.hasClass(className)) {
+            this.setAttribute('class', removedClass);
+        }
+    };
+
+    var svgList = document.getElementsByTagName('svg');
     var aboutOff = angular.element(document.getElementById('about'))[0].offsetTop;
     var skillsOff = angular.element(document.getElementById('skills'))[0].offsetTop;
     var portOff = angular.element(document.getElementById('portfolio'))[0].offsetTop;
@@ -33,6 +52,14 @@ angular.module('app').controller('mainCtrl', function ($scope, $document, $windo
     $scope.navStyle = {'color': '#ebeaea'};
     $document.on('scroll', function () {
         $scope.$apply(function () {
+            [].forEach.call(svgList, function (e) {
+                if ($window.innerHeight - 50 >= e.getBoundingClientRect().top) {
+                    e.addClass("svgGrow");
+                }
+                if ((e.getBoundingClientRect().top < 75 && e.hasClass('svgGrow')) || (e.getBoundingClientRect().top + 100 > $window.innerHeight && e.hasClass('svgGrow'))) {
+                    e.removeClass("svgGrow");
+                }
+            });
             $scope.pxScr = $window.scrollY;
             if ($scope.pxScr > 75) {
                 $scope.navStyle = {'color': '#131829'};
