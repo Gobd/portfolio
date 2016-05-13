@@ -42,6 +42,7 @@ body {
 #navigation {
     position: fixed;
     top: 0;
+    z-index: 5;
     height: 65px;
     width: 100%;
     transition: background-color .3s;
@@ -95,6 +96,7 @@ body {
 }
 
 #devInfo {
+    margin-top: 35px;
     font-size: 4vw;
 }
 
@@ -114,7 +116,6 @@ body {
     margin-bottom: -250px;
     height: 75px;
     filter: invert(100%);
-    opacity: 1;
     animation: flickerAnimation 1.5s infinite;
 }
 
@@ -126,24 +127,37 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 500px;
-    border: 5px solid black;
+    border-bottom: 2px solid black;
+    padding-bottom: 35px;
+}
+
+#about img {
+    margin: 35px 0 20px 0;
+}
+
+.aboutText {
+    width: 60%;
+    text-align: center;
 }
 
 #skills {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-bottom: 2px solid black;
+    padding-right: 100px;
+    padding-left: 100px;
 }
 
 #skillsIcons {
+    margin-top: 50px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
-#skillsIcons svg {
+svg {
     height: 100px;
     width: 100px;
     margin: 35px 20px;
@@ -154,7 +168,7 @@ body {
     flex-direction: column;
     align-items: center;
     height: 500px;
-    border: 5px solid black;
+    border-bottom: 2px solid black;
 }
 
 #contact {
@@ -162,5 +176,25 @@ body {
     flex-direction: column;
     align-items: center;
     height: 500px;
-    border: 5px solid black;
+}
+
+#contactButtons {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+#contactButtons svg {
+    margin: 40px;
+}
+
+#contactStatement {
+    font-size: 1.1em;
+    margin-top: 50px;
+}
+
+.contactIcon:hover {
+    transition: all 0.3s;
+    width: 115px;
+    height: 115px;
 }

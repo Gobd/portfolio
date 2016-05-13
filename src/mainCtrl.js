@@ -1,9 +1,25 @@
-angular.module('app').controller('mainCtrl', function ($scope, $document, $window) {
+angular.module('app').controller('mainCtrl', function ($scope, $document, $window, $interval) {
 
     $scope.scrollTo = function (id) {
         var el = angular.element(document.getElementById(id));
         $document.scrollToElement(el, 50, 200);
     };
+
+    $scope.tagLine = '';
+    var tagText = 'Full Stack Web Developer | UI/UX | JavaScript';
+
+    function printer(text) {
+        var count = 1;
+        var print = function () {
+            $scope.tagLine = text.slice(0, count);
+            count++;
+        };
+        var delayRand = function () {
+            return Math.random() * (125 - 75) + 75;
+        };
+        $interval(print, delayRand(), text.length)
+    }
+    printer(tagText);
 
     var aboutOff = angular.element(document.getElementById('about'))[0].offsetTop;
     var skillsOff = angular.element(document.getElementById('skills'))[0].offsetTop;
